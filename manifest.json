@@ -1,0 +1,49 @@
+{
+	"manifest_version": 2,
+	
+	"name": "One-click Awesome",
+	"description": "This is my first google chrome extension.",
+	"version": "1.0",
+	
+	"background": {
+		"scripts": ["background.js"]
+	},
+	
+	"content_security_policy": "script-src 'self' 'unsafe-eval' https://; object-src 'self'",
+	
+	"permissions": [
+		"storage",
+		"tabs",
+		"https://ajax.googleapis.com",
+		"https://maxcdn.bootstrapcdn.com"
+	],
+	
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	},
+	
+	"content_scripts": [ {
+		"css": ["inject.css"],
+      "js": [ "js/jquery.min.js", "js/velocity.min.js", "inject.js" ],
+      "matches": [ "<all_urls>" ],
+      "run_at": "document_start"
+   	} ],
+	
+	 "commands": {
+    "toggle-feature": {
+      "suggested_key": { 
+		  "default": "Alt+Q",
+		  "mac": "Alt+Q"
+	  },
+      "description": "Send a 'toggle-feature' event to the extension"
+    }
+    /*"_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "MacCtrl+Shift+Y"
+      }
+    }*/
+  },
+	"web_accessible_resources": [ "assets/Lato-Regular.ttf", "assets/Lato-Bold.ttf", "assets/Lato-Black.ttf", "assets/OpenSans-Regular.ttf", "assets/OpenSans-Bold.ttf", "assets/OpenSans-Semibold.ttf", "assets/Raleway-Regular.ttf", "assets/Raleway-Semibold", "assets/Raleway-Bold.ttf", "main.css", "main.css.map", "main.html", "main.js", "inject.css", "sidebar/sidebar.html", "sidebar/sidebar.css", "sidebar/script.js", "sidebar/search.js", "sidebar/tree.js", "js/velocity.min.js", "js/TweenLite.min.js", "icon.png", "remove-on.png",  "remove-off.on", "loader.gif", "assets/icons-asphalt.jpg", "assets/search-icon.png", "assets/polygon-purple.jpg", "assets/polygon-blue.jpg", "assets/polygon-teal.jpg"]
+}
