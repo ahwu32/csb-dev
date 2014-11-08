@@ -1,21 +1,17 @@
 #bb-sidebar-frame {
 	
-	
 	position: fixed; 
 	width: 250px;
-/*	width: 300px;*/
 	height: 100%;
 	border:none;
 	border-image: none;
 /*	border: 2px solid green;*/
 /*	box-sizing: border-box;*/
 /*	border-right: 4px solid rgba(0,0,0,0.3);*/
-	z-index: 2147483647; 
+	z-index: 2147483647;
 	top: 0px;
-	left:-250px;
+	left: 0px;
 	background: #383838;
-	
-/*	opacity: 0.8;*/
 }
 
 #bb-push-push {
@@ -41,4 +37,18 @@
 	z-index: 2147483647;
 	margin-top: -120px;
 	opacity: 0.5;
+}
+
+#cbb-sidebar-frame {
+	position: fixed !important;
+	border: none !important;
+	border-image: none !important;
+	
+	width: 250px;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 2147483647;
+	
+	background: #383838;
 }

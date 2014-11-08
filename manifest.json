@@ -19,13 +19,13 @@
 	],
 
 	"browser_action": {
-		"default_icon": "icon.png",
+		/*"default_icon": "icon.png",*/
 		"default_popup": "popup.html"
 	},
 
 	"content_scripts": [{
-		"css": ["inject.css"],
-		"js": ["js/jquery.min.js", "js/velocity.min.js", "inject.js"],
+		"css": ["inject/inject.css"],
+		"js": ["resources/jquery.min.js", "resources/velocity.min.js", "inject/inject.js"],
 		"matches": ["<all_urls>"],
 		"run_at": "document_start"
    	}],
@@ -45,5 +45,5 @@
       }
     }*/
 	},
-	"web_accessible_resources": ["assets/Lato-Regular.ttf", "assets/Lato-Bold.ttf", "assets/Lato-Black.ttf", "assets/OpenSans-Regular.ttf", "assets/OpenSans-Bold.ttf", "assets/OpenSans-Semibold.ttf", "assets/Raleway-Regular.ttf", "assets/Raleway-Semibold", "assets/Raleway-Bold.ttf", "main.css", "main.css.map", "main.html", "main.js", "inject.css", "sidebar/sidebar.html", "sidebar/sidebar.css", "sidebar/script.js", "sidebar/search.js", "sidebar/tree.js", "js/velocity.min.js", "js/TweenLite.min.js", "icon.png", "remove-on.png", "remove-off.on", "loader.gif", "assets/icons-asphalt.jpg", "assets/search-icon.png", "assets/polygon-purple.jpg", "assets/polygon-blue.jpg", "assets/polygon-teal.jpg"]
+	"web_accessible_resources": ["assets/Lato-Regular.ttf", "assets/Lato-Bold.ttf", "assets/Lato-Black.ttf", "assets/OpenSans-Regular.ttf", "assets/OpenSans-Bold.ttf", "assets/OpenSans-Semibold.ttf", "assets/Raleway-Regular.ttf", "assets/Raleway-Semibold", "assets/Raleway-Bold.ttf", "main.css", "main.css.map", "main.html", "main.js", "inject.css", "sidebar/sidebar.html", "sidebar/sidebar.css", "sidebar/script.js", "sidebar/search.js", "sidebar/tree.js", "js/velocity.min.js", "js/TweenLite.min.js", "icon.png", "remove-on.png", "remove-off.on", "loader.gif", "assets/icons-asphalt.jpg", "assets/search-icon.png", "assets/polygon-purple.jpg", "assets/polygon-blue.jpg", "assets/polygon-teal.jpg", "sidebar/placeholder.html"]
 }
