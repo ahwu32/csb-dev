@@ -3,9 +3,7 @@
 	var frameId = 'cbb-sidebar-frame';
 	var frameHtml = "";
 	
-	$('html').append(
-		'<iframe id="' + frameId + '" src="' + chrome.extension.getURL("sidebar/placeholder.html") + '" scrolling="no" frameborder="0" allowtransparency="false" ' + '</iframe>'
-	);
+
 	
 //	window.innerWidth = 400;
 	
@@ -16,8 +14,16 @@
 	
 	var activateHtml = '<div id="cbb-activate-test"><div id="cbb-activate-test-inner"></div></div>';
 	
+	var activateHtml = '<div id="cbb-activate-wrapper"><div id="cbb-activate"></div></div>';
+	
+	var activateHtml = '<div id="cbb-activate-test"></div>';
+	
 	
 	$('html').append(activateHtml);
+	
+		$('html').append(
+		'<iframe id="' + frameId + '" src="' + chrome.extension.getURL("sidebar/placeholder.html") + '" scrolling="no" frameborder="0" allowtransparency="false" ' + '</iframe>'
+	);
 		
 	$('#' + frameId).hover(function () {
 		$("body").css("overflow", "hidden");
@@ -25,19 +31,26 @@
 		$("body").css("overflow", "auto");
 	});
 	
-	$('#cbb-activate-buffer').hover(function() {
+	$('#cbb-activate-wrapper').hover(function() {
 		console.log('test');
-		$('#cbb-activate').velocity({
-			opacity: 0.5
-		}, 250);
+		$('#cbb-activate').css('opacity', 0.4);
 	}, function() {
-		$('#cbb-activate').velocity({
-			opacity: 1.0
-		}, 250);
+		$('#cbb-activate').css('opacity', 0.2);
 	});
 	
-	$('#cbb-activate-buffer').mouseenter(function() {
-		
+
+	
+	$('#cbb-activate-test').mouseenter(function() {
+		$('#cbb-sidebar-frame').velocity({
+			left: 0
+		}, 250, 'easeIn');
+//		alert('activated');
+	});
+	
+	$('#cbb-sidebar-frame').mouseleave(function() {
+		$('#cbb-sidebar-frame').velocity({
+			left: -250
+		}, 250, "easeOut");
 	});
 	
 })();
