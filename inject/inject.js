@@ -1,17 +1,43 @@
 (function() {
 	
 	var frameId = 'cbb-sidebar-frame';
+	var frameHtml = "";
 	
 	$('html').append(
 		'<iframe id="' + frameId + '" src="' + chrome.extension.getURL("sidebar/placeholder.html") + '" scrolling="no" frameborder="0" allowtransparency="false" ' + '</iframe>'
 	);
 	
-	//$('html').append('<div id="bb-push-push-buffer"></div><div id="bb-push-push"></div>');
+//	window.innerWidth = 400;
+	
+//	$('html').append('<div id="bb-push-push-buffer"></div><div id="bb-push-push"></div>');
+	
+	
+	var activateHtml = '<div id="cbb-activate-wrapper"><div id="cbb-activate-buffer"></div><div id="cbb-activate"></div></div>';
+	
+	var activateHtml = '<div id="cbb-activate-test"><div id="cbb-activate-test-inner"></div></div>';
+	
+	
+	$('html').append(activateHtml);
 		
 	$('#' + frameId).hover(function () {
 		$("body").css("overflow", "hidden");
 	}, function () {
 		$("body").css("overflow", "auto");
+	});
+	
+	$('#cbb-activate-buffer').hover(function() {
+		console.log('test');
+		$('#cbb-activate').velocity({
+			opacity: 0.5
+		}, 250);
+	}, function() {
+		$('#cbb-activate').velocity({
+			opacity: 1.0
+		}, 250);
+	});
+	
+	$('#cbb-activate-buffer').mouseenter(function() {
+		
 	});
 	
 })();
