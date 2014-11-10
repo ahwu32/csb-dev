@@ -1,58 +1,73 @@
-(function() {
-	
+(function () {
+
 	var frameId = 'cbb-sidebar-frame';
 	var frameHtml = "";
-	
 
-	
-//	window.innerWidth = 400;
-	
-//	$('html').append('<div id="bb-push-push-buffer"></div><div id="bb-push-push"></div>');
-	
-	
+
+
+	//	window.innerWidth = 400;
+
+	//	$('html').append('<div id="bb-push-push-buffer"></div><div id="bb-push-push"></div>');
+
+
 	var activateHtml = '<div id="cbb-activate-wrapper"><div id="cbb-activate-buffer"></div><div id="cbb-activate"></div></div>';
-	
+
 	var activateHtml = '<div id="cbb-activate-test"><div id="cbb-activate-test-inner"></div></div>';
-	
+
 	var activateHtml = '<div id="cbb-activate-wrapper"><div id="cbb-activate"></div></div>';
-	
+
 	var activateHtml = '<div id="cbb-activate-test"></div>';
-	
-	
+
+
 	$('html').append(activateHtml);
-	
-		$('html').append(
+
+	$('html').append(
 		'<iframe id="' + frameId + '" src="' + chrome.extension.getURL("sidebar/placeholder.html") + '" scrolling="no" frameborder="0" allowtransparency="false" ' + '</iframe>'
 	);
-		
+
 	$('#' + frameId).hover(function () {
 		$("body").css("overflow", "hidden");
 	}, function () {
 		$("body").css("overflow", "auto");
 	});
-	
-	$('#cbb-activate-wrapper').hover(function() {
+
+	$('#cbb-activate-wrapper').hover(function () {
 		console.log('test');
 		$('#cbb-activate').css('opacity', 0.4);
-	}, function() {
+	}, function () {
 		$('#cbb-activate').css('opacity', 0.2);
 	});
-	
 
-	
-	$('#cbb-activate-test').mouseenter(function() {
+
+	$('#cbb-activate-test').click(function () {
 		$('#cbb-sidebar-frame').velocity({
 			left: 0
-		}, 250, 'easeIn');
-//		alert('activated');
+		}, 250, "easeInQuad");
 	});
-	
-	$('#cbb-sidebar-frame').mouseleave(function() {
-		$('#cbb-sidebar-frame').velocity({
-			left: -250
-		}, 250, "easeOut");
+
+
+	//	$('#cbb-activate-test').mouseenter(function() {
+	//		$('#cbb-sidebar-frame').velocity({
+	//			left: 0
+	//		}, 250, 'easeIn');
+	////		alert('activated');
+	//	});
+
+	$(document).on('click', function (event) {
+		if (!$(event.target).closest('#cbb-activate-test').length) {
+			$('#cbb-sidebar-frame').velocity({
+				left: -250
+			}, 250, "easeOut");
+		}
 	});
-	
+
+
+	//	$('#cbb-sidebar-frame').mouseleave(function () {
+	//		$('#cbb-sidebar-frame').velocity({
+	//			left: -250
+	//		}, 250, "easeOut");
+	//	});
+
 })();
 
 //CHECK IF SIDEBAR OPEN OR CLOSED ON PAGE LOAD

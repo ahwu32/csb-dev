@@ -92,7 +92,7 @@
 	left: 0px;
 	height: 60%;
 	top: 20%;
-	width: 24px;
+	width: 30px;
 	background: green;
 	z-index: 2147483647;
 }
@@ -104,4 +104,9 @@
    activated based on mouse slide to the left
    activated on click
    heavily transparent until mouse is close to area
+
+	activate on click
+	activate on mouseenter
+	activate on stay duration (ui iffy)
   */
+
