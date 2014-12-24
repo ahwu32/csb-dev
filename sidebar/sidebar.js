@@ -70,33 +70,33 @@ $(document).ready(function () {
 	});
 	
 	//NAV ON SCROLL EXPERIMENTAL
-	$('#bb-tab-list').bind('mousewheel', function(e){
-        if(e.originalEvent.wheelDelta > 0) {
-//            $(this).text('scrolling up !');
-			
-			var navToId = $('#' + _sbSelf).prev().attr('id');
-			if (navToId) {
-				$('#bb-cover').removeClass('bb-cover-off');
-				$('#bb-tab-list').empty();
-				chrome.runtime.sendMessage({
-					gotoTab: parseInt(navToId),
-					updateScroll: getScroll()
-				});
-			}
-        }
-        else{
-//            $(this).text('scrolling down !');
-			var navToId = $('#' + _sbSelf).next().attr('id');
-			if (navToId) {
-				$('#bb-cover').removeClass('bb-cover-off');
-				$('#bb-tab-list').empty();
-				chrome.runtime.sendMessage({
-					gotoTab: parseInt(navToId),
-					updateScroll: getScroll()
-				});
-			}
-        }
-    });
+//	$('#bb-tab-list').bind('mousewheel', function(e){
+//        if(e.originalEvent.wheelDelta > 0) {
+////            $(this).text('scrolling up !');
+//			
+//			var navToId = $('#' + _sbSelf).prev().attr('id');
+//			if (navToId) {
+//				$('#bb-cover').removeClass('bb-cover-off');
+//				$('#bb-tab-list').empty();
+//				chrome.runtime.sendMessage({
+//					gotoTab: parseInt(navToId),
+//					updateScroll: getScroll()
+//				});
+//			}
+//        }
+//        else{
+////            $(this).text('scrolling down !');
+//			var navToId = $('#' + _sbSelf).next().attr('id');
+//			if (navToId) {
+//				$('#bb-cover').removeClass('bb-cover-off');
+//				$('#bb-tab-list').empty();
+//				chrome.runtime.sendMessage({
+//					gotoTab: parseInt(navToId),
+//					updateScroll: getScroll()
+//				});
+//			}
+//        }
+//    });
 	
 	
 });

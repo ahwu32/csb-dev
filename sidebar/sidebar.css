@@ -1,4 +1,5 @@
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+/* line 22, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
@@ -7,25 +8,32 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   margin: 0;
   padding: 0; }
 
+/* line 22, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
 
+/* line 22, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 body {
   line-height: 1; }
 
+/* line 22, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 ol, ul {
   list-style: none; }
 
+/* line 22, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 blockquote, q {
   quotes: none; }
 
+/* line 22, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 blockquote:before, blockquote:after, q:before, q:after {
   content: none; }
 
+/* line 22, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* line 33, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -63,12 +71,18 @@ table {
 
 @font-face {
   font-family: "Raleway Semibold";
-  src: url('chrome-extension://__MSG_@@extension_id__/assets/Raleway-SemiBold.ttf'); }
+  src: url('chrome-extension://__MSG_@@extension_id__/resources/Raleway-SemiBold.ttf'); }
 
+@font-face {
+  font-family: "NotoSans Regular";
+  src: url('chrome-extension://__MSG_@@extension_id__/resources/NotoSans-Regular.ttf'); }
+
+/* line 88, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 body {
   -webkit-transition: -webkit-transform 0.25s;
   transition: transform 0.25s; }
 
+/* line 101, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-sidebar {
   box-sizing: border-box;
   height: 100%;
@@ -84,27 +98,34 @@ body {
   -webkit-transition: -webkit-transform 0.25s;
   transition: transform 0.25s; }
 
+/* line 138, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-sidebar::-webkit-scrollbar-track {
   border-radius: 3px; }
 
+/* line 142, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-sidebar::-webkit-scrollbar-thumb {
   border-radius: 3px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
 
+/* line 147, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-sidebar-open {
   -webkit-transform: translate3d(250px, 0, 0);
   transform: translate(250px, 0, 0); }
 
+/* line 152, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-body-open {
   -webkit-transform: translate3d(250px, 0, 0);
   transform: translate(250px, 0, 0); }
 
+/* line 159, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-padding-open {
   -webkit-transform: translate3d(250px, 0, 0); }
 
+/* line 165, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-top-bar-open {
   -webkit-transform: translate3d(250px, 0, 0); }
 
+/* line 172, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-padding {
   position: fixed;
   bottom: 0px;
@@ -120,6 +141,7 @@ body {
   transition: transform 0.25s;
   z-index: 10000; }
 
+/* line 192, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-top-bar {
   position: fixed;
   top: 0px;
@@ -136,6 +158,7 @@ body {
   border-bottom: 1px solid yellow;
   border: none; }
 
+/* line 214, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-options {
   position: absolute;
   color: rgba(255, 255, 255, 0.5);
@@ -146,6 +169,7 @@ body {
   line-height: 24px;
   top: 12px; }
 
+/* line 224, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-search-group {
   position: absolute;
   width: 190px;
@@ -153,6 +177,7 @@ body {
   top: 12px;
   box-sizing: border-box; }
 
+/* line 231, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-search {
   font-family: "Raleway Semibold";
   padding: 0px 16px;
@@ -167,6 +192,7 @@ body {
   background: rgba(0, 0, 0, 0.4);
   color: white; }
 
+/* line 248, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-search-icon {
   font-size: 12px;
   width: 24px;
@@ -176,9 +202,11 @@ body {
   right: 12px;
   color: #526A82; }
 
+/* line 258, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 ::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.3); }
 
+/* line 264, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-item {
   box-sizing: border-box;
   display: block;
@@ -189,16 +217,16 @@ body {
   transition: all 0.25s ease-in-out;
   z-index: 1; }
 
-.bb-tab-item * {
-  border: 1px dashed yellow; }
-
+/* line 293, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-window-tab {
   padding-left: 0px; }
 
+/* line 298, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-item:last-child .bb-tab-content {
   box-shadow: 0px 6px 0px rgba(0, 0, 0, 0.4);
   margin-bottom: 50px; }
 
+/* line 303, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-remove {
   position: absolute;
   font-size: 14px;
@@ -206,6 +234,7 @@ body {
   opacity: 0.4;
   display: none; }
 
+/* line 311, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-close {
   background-image: url('/remove-off.png');
   background-size: 14px 14px;
@@ -220,12 +249,15 @@ body {
   transition: all 0.25s;
   opacity: 0.5; }
 
+/* line 327, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-item:hover {
   opacity: 0.9; }
 
+/* line 331, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-close:hover {
   background-image: url('/remove-on.png'); }
 
+/* line 336, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tree-toggle {
   position: absolute;
   width: 16px;
@@ -235,6 +267,7 @@ body {
   left: 0px;
   text-align: center; }
 
+/* line 344, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-content {
   box-sizing: border-box;
   height: 28px;
@@ -245,6 +278,7 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 2px; }
 
+/* line 372, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-icon {
   position: absolute;
   display: block;
@@ -253,6 +287,7 @@ body {
   width: 16px;
   height: 16px; }
 
+/* line 379, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-title {
   display: block;
   height: 28px;
@@ -264,33 +299,41 @@ body {
   white-space: nowrap;
   cursor: default; }
 
+/* line 394, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-title a {
   font-size: 12px;
   text-decoration: none;
   color: black !important; }
 
+/* line 400, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-self .bb-tab-content {
   background: rgba(236, 240, 241, 0.4);
   color: white; }
 
+/* line 410, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-display-none {
   display: none; }
 
+/* line 414, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-child {
   opacity: 0.5; }
 
+/* line 418, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-window-tab .bb-tab-content {
   background: rgba(236, 240, 241, 0.7);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
 
+/* line 428, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-window-tab .bb-tab-title {
   font-size: 12px;
   padding: 0px 12px 0px 22px; }
 
+/* line 433, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-window-tab:nth-child(2) {
   margin-top: 20px; }
 
+/* line 437, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-right-bar {
   position: fixed;
   width: 6px;
@@ -302,6 +345,7 @@ body {
   opacity: 0.1;
   background: #383838; }
 
+/* line 451, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-activate {
   height: 90px;
   width: 45px;
@@ -312,6 +356,7 @@ body {
   top: 50%;
   right: -10px; }
 
+/* line 462, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-tab-list {
   position: absolute;
   width: 250px;
@@ -328,6 +373,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll; }
 
+/* line 485, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 #bb-cover {
   position: absolute;
   width: 250px;
@@ -342,22 +388,28 @@ body {
   transition: opacity 0.1s ease-in-out;
   pointer-events: none; }
 
+/* line 503, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-cover-off {
   opacity: 0; }
 
+/* line 507, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 ::-webkit-scrollbar {
   width: 6px; }
 
+/* line 511, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 ::-webkit-scrollbar-track {
   background: #ECF0F1; }
 
+/* line 517, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 ::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background: #b4bdc3; }
 
+/* line 523, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-not-active {
   opacity: 0.6; }
 
+/* line 527, /Users/albert/Development/chrome-sidetab/sidebar/sidebar.scss */
 .bb-tab-visible {
   z-index: 2; }
 

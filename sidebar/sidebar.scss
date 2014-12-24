@@ -77,7 +77,12 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 @font-face {
 	font-family: "Raleway Semibold";
-	src: url('chrome-extension://__MSG_@@extension_id__/assets/Raleway-SemiBold.ttf');
+	src: url('chrome-extension://__MSG_@@extension_id__/resources/Raleway-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: "NotoSans Regular";
+	src: url('chrome-extension://__MSG_@@extension_id__/resources/NotoSans-Regular.ttf')
 }
 
 body {
@@ -117,6 +122,8 @@ body {
 	background: $background;
 //	overflow-x: hidden;
 //	overflow-y: scroll;
+	
+//	display:none;
 	
 	
 	
@@ -280,7 +287,7 @@ body {
 //}
 
 .bb-tab-item * {
-	border: 1px dashed yellow;
+//	border: 1px dashed yellow;
 }
 
 .bb-window-tab {
