@@ -63,6 +63,11 @@
 	transform: translate(250px);
 }
 
+.show-sidebar-instant {
+	transition: transform 0s !important;
+	transform: translate(250px);
+}
+
 .hidden {
 	display: none;
 }
@@ -179,7 +184,7 @@
 /*	display: none;*/
 	visibility: hidden;
 	background: black;
-	opacity: 0;
+	opacity: 0.5;
 	z-index: 2147483640;
 	
 	transition: opacity 0.4s;
@@ -228,3 +233,4 @@ body {
 .transform {
 	transform: translate(500px);
 }
+

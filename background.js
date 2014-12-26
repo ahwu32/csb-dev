@@ -17,6 +17,7 @@ var _bbTree = {};
 //on command send update sidebar to all tabs
 //if open keep open/if close open depending on command state here
 
+var sidebarOpen = {};
 
 //(function() {
 //	
@@ -35,6 +36,32 @@ var _bbTree = {};
 //	});
 //	
 //})();
+
+
+/**
+ *
+ * Inject script logic
+ */
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+	
+	if (request.isSidebarOpen) {
+		activeWindow = sender.tab.windowId;
+		sendResponse({
+			isSidebarOpen: sidebarOpen[activeWindow]
+		});
+	} else if (request.sidebarOpened) {
+		activeWindow = sender.tab.windowId;
+		sidebarOpen[activeWindow] = true;
+		console.log('sidebar open for window ' + activeWindow);
+	} else if (request.sidebarClosed) {
+		activeWindow = sender.tab.windowId;
+		sidebarOpen[activeWindow] = false;
+		console.log('sidebar closed for window ' + activeWindow);
+	} else if (request == "testing") {
+		console.log('testing received in background.js')
+	}
+	
+});
 
 chrome.commands.onCommand.addListener(function (command) {
 
@@ -166,17 +193,28 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 //SIDEBAR LOGIC
 chrome.tabs.onActivated.addListener(function (activeInfo) {
 	
+//	chrome.tabs.get(activeInfo.tabId, function(tab) {
+//		if (_bbActive[activeInfo.windowId]) {
+//
+//			chrome.tabs.sendMessage(activeInfo.tabId, {
+//				onActivated: 1,
+//				scroll: _bbScroll
+//			});
+//		} else {
+//			chrome.tabs.sendMessage(activeInfo.tabId, {
+//				onActivated: -1
+//			});
+//		}
+//	});	
+	
 	chrome.tabs.get(activeInfo.tabId, function(tab) {
-		if (_bbActive[activeInfo.windowId]) {
+		if (sidebarOpen[activeInfo.windowId]) {
 
 			chrome.tabs.sendMessage(activeInfo.tabId, {
-				onActivated: 1,
-				scroll: _bbScroll
+				onActivated: true,
+//				scroll: _bbScroll
 			});
-		} else {
-			chrome.tabs.sendMessage(activeInfo.tabId, {
-				onActivated: -1
-			});
+
 		}
 	});
 	

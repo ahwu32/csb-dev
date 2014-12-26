@@ -12,6 +12,8 @@ inject();
 
 function inject() {
 	
+	var sidebarOpen;
+	
 	var htmlEl = document.documentElement;
 	var bodyEl = document.body;
 	var childEl = document.createElement('div');
@@ -23,12 +25,12 @@ function inject() {
 	
 	childEl.innerHTML = toggleHtml + iframeHtml;
 	htmlEl.appendChild(childEl);
-		
 	
 	//hide show functions
 	var toggleEl = document.getElementById('csb-toggle-btn');
 	var sidebarEl = document.getElementById(frameId);
 	var overlayEl = document.getElementById('csb-overlay');
+	
 	
 	toggleEl.addEventListener('click', function(e) {
 		
@@ -39,6 +41,9 @@ function inject() {
 //		sidebarEl.style.left = "0px";
 		sidebarEl.className = "show-sidebar";
 		fadeIn(overlayEl);
+		
+		chrome.runtime.sendMessage({sidebarOpened: true});
+		sidebarOpen = true;
 		
 		//Working velocity animations
 //		Velocity(sidebarEl, {left: 0}, {duration: 300});
@@ -54,8 +59,18 @@ function inject() {
 //		sidebarEl.className = 'hidden';
 		
 //		sidebarEl.style.left = "-250px";
-		sidebarEl.className = "";
-		fadeOut(overlayEl);
+		
+		if (sidebarOpen) {
+			sidebarEl.className = "";
+			fadeOut(overlayEl);
+
+			chrome.runtime.sendMessage({
+				sidebarClosed: true
+			});
+			
+			sidebarOpen = false;
+		}
+
 		
 		//Workign velocity animations
 //		Velocity(sidebarEl, {left: -250}, {duration: 300});
@@ -63,14 +78,12 @@ function inject() {
 	}
 	
 	function fadeIn(overlayEl) {
-//		overlayEl.style.display = 'block';
 		overlayEl.style.visibility = "visible";
 		overlayEl.style.opacity = 0.4;
 	}
 	
 	function fadeOut(overlayEl) {
 		overlayEl.style.opacity = 0;
-//		overlayEl.style.visibility = "hidden";
 	}
 	
 	overlayEl.addEventListener("transitionend", function() {
@@ -79,12 +92,22 @@ function inject() {
 		}
 	}, true);
 		
-	//chrome functions
-	
+	chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+		if (request.onActivated) {
+			sidebarEl.className = "show-sidebar-instant"
+			overlayEl.style.visibility = "visible";
+			sidebarOpen = true;
+		}
+	});
 	
 	console.timeEnd('inject');
 	console.timeEnd('injectTotal');
 }
+
+function openSidebar() {
+	
+}
+
 //
 //function injectJquery() {
 //	var frameId = 'cbb-sidebar-frame';
