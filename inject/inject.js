@@ -19,9 +19,9 @@ function inject() {
 	var childEl = document.createElement('div');
 	childEl.id = "csb-wrapper";
 	
-	var frameId = 'cbb-sidebar-frame';
+	var frameId = 'csb-sidebar-frame';
 	var toggleHtml = '<div id="csb-toggle-btn"><div id="csb-toggle-icon"></div></div><div id="csb-overlay"></div>';
-	var iframeHtml = '<iframe id="' + frameId + '" src="' + chrome.extension.getURL("sidebar/sidebar.html") + '"  ' + '</iframe>';
+	var iframeHtml = '<iframe id="' + frameId + '" src="' + chrome.extension.getURL("sidebar/sidebar.html") + '"</iframe>';
 	
 	childEl.innerHTML = toggleHtml + iframeHtml;
 	htmlEl.appendChild(childEl);
