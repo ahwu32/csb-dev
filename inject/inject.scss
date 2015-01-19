@@ -1,4 +1,5 @@
 $iframe-width: 280px;
+//$iframe-width: 300px;
 $max-index: 2147483647;
 
 #csb-wrapper {
@@ -22,8 +23,11 @@ $max-index: 2147483647;
 //	z-index: $max-index;
 //	z-index: $max-index;
 	
-	background: #383838;
+//	background: #383838;
 /*	box-shadow: 30px 0px 10px rgba(0,0,0,0.4);*/
+	background: rgba(black, 0.12);
+//	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	box-shadow: 3px 0 3px rgba(51,51,51,.4);
 /*	transition: left 0.3s;*/
 	transition: transform 0.4s;
 	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
@@ -67,5 +71,5 @@ $max-index: 2147483647;
 
 .show-sidebar {
 /*	transform: translate(250px);*/
-	transform: translate(280px);
+	transform: translate($iframe-width);
 }

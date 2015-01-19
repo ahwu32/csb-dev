@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "opensans regular";
+  src: url("/assets/fonts/OpenSans-Regular.ttf"); }
+
+@font-face {
+  font-family: "opensans semibold";
+  src: url("/assets/fonts/OpenSans-Semibold.ttf"); }
+
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-/* line 12, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 25, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
@@ -8,54 +16,42 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   margin: 0;
   padding: 0; }
 
-/* line 12, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 25, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
 
-/* line 12, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 25, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 body {
   line-height: 1; }
 
-/* line 12, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 25, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 ol, ul {
   list-style: none; }
 
-/* line 12, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 25, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 blockquote, q {
   quotes: none; }
 
-/* line 12, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 25, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 blockquote:before, blockquote:after, q:before, q:after {
   content: none; }
 
-/* line 12, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 25, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 14, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 27, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 * {
   box-sizing: border-box; }
 
-/* line 18, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
-.dev-div {
-  border: 1px dashed green; }
-
-/* line 22, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 33, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #csb-container {
   font-family: "notosans regular";
+  font-family: "opensans regular";
   font-family: "opensans semibold"; }
 
-/* line 33, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
-#iframe-sim {
-  position: fixed;
-  width: 280px;
-  height: 100%;
-  right: 0px;
-  left: 0px;
-  z-index: 1000; }
-
-/* line 42, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 45, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-icon {
   position: absolute;
   height: 24px;
@@ -65,32 +61,48 @@ table {
   opacity: 0.6;
   transition: opacity 0.25s; }
 
-/* line 52, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 55, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-icon:hover {
   opacity: 0.8; }
 
-/* line 56, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 59, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #csb-container {
+  position: absolute;
   width: 280px;
   height: 100%;
   background: #616161;
-  position: absolute;
+  background: #BDBDBD;
+  background: #424242;
+  background: #9E9E9E;
+  background: url('/assets/images/dark-polygon.png');
   z-index: 9; }
 
-/* line 78, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 88, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+#csb-container-overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
+  background: rgba(255, 255, 255, 0.12); }
+
+/* line 98, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #csb-toolbar {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 280px;
   height: 56px;
-  background: url('/resources/dark-polygon.png');
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
-  z-index: 10;
+  background: rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 100;
   transition: height 0.5s;
-  overflow: hidden; }
+  overflow: hidden;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12); }
 
-/* line 95, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 123, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #csb-toolbar-shelf {
   position: absolute;
   width: 280px;
@@ -100,7 +112,7 @@ table {
   left: 11px;
   display: flex; }
 
-/* line 106, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 134, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-shelf-tab {
   font-family: "notosans regular";
   height: 48px;
@@ -110,21 +122,22 @@ table {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.8); }
 
-/* line 116, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 144, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #csb-search-group {
   position: absolute;
   width: 256px;
+  width: 278px;
   height: 34px;
   top: 11px;
   left: 12px; }
 
-/* line 125, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 154, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #csb-search-icon {
   top: 5px;
   left: 12px;
   color: rgba(255, 255, 255, 0.8); }
 
-/* line 131, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 160, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #csb-icon-group {
   position: absolute;
   width: 24px;
@@ -133,22 +146,23 @@ table {
   right: 16px;
   top: 16px; }
 
-/* line 144, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 173, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #csb-search-input {
   background: rgba(255, 255, 255, 0.15);
   border: none;
   outline: none;
   width: 256px;
   height: 34px;
-  font-family: "notosans regular";
+  font-family: "opensans regular";
   padding: 0px 48px;
   font-size: 12px;
   line-height: 34px;
   color: rgba(255, 255, 255, 0.8);
   border-radius: 2px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px; }
 
-/* line 161, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 193, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #dummy-content-body {
   position: absolute;
   width: 270px;
@@ -157,11 +171,11 @@ table {
   top: 56px;
   overflow: hidden; }
 
-/* line 174, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 206, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 body {
   background: black; }
 
-/* line 178, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 210, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #under {
   position: absolute;
   width: 284px;
@@ -173,7 +187,7 @@ body {
   box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.4);
   display: none; }
 
-/* line 195, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 227, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #ellipsis-icon {
   position: absolute;
   font-size: 20px;
@@ -181,7 +195,7 @@ body {
   right: 12px;
   top: 18px; }
 
-/* line 203, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 235, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #csb-brand {
   position: absolute;
   width: 24px;
@@ -192,24 +206,24 @@ body {
   top: 16px;
   left: 16px; }
 
-/* line 215, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 247, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .hungry {
   position: absolute;
   z-index: 3000; }
 
-/* line 224, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 256, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .bb-test-item {
   margin-left: -10px;
   margin-top: -26px; }
 
-/* line 229, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 261, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .bb-tab-content {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   background: #ECF0F1;
   font-family: "notosans regular";
   transition: all 0.15s; }
 
-/* line 245, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 271, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .bb-tab-content:hover {
   z-index: 1000;
   transform: scale(1.05);
@@ -219,37 +233,47 @@ body {
 /**
  * Content Area
  */
-/* line 289, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 316, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #csb-content-area {
   position: absolute;
   width: 280px;
   top: 56px;
-  bottom: 36px; }
+  bottom: 36px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
-/* line 300, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 330, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 #csb-divider {
   position: absolute;
-  z-index: 1000;
-  width: 6px;
+  z-index: 101;
+  width: 2px;
   height: 100%;
   background: white;
+  background: #E9E9E9;
+  background: #E5E8EF;
+  background: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.7);
   right: 0px;
-  top: 0px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); }
+  top: 0px; }
 
-/* line 311, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 349, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-tab-list {
   padding-left: 16px; }
 
-/* line 315, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 353, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-root-list {
   padding-left: 12px;
   padding-right: 6px; }
 
+/* line 358, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+#csb-tab-root-list {
+  padding-left: 12px;
+  padding-right: 12px; }
+
 /**
  * Tab Styling
 */
-/* line 326, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 370, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-tab-item {
   background: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -260,35 +284,11 @@ body {
   position: relative;
   transition: all 0.15s; }
 
-/* line 339, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
-.csb-tab-item:hover {
-  height: 42px;
-  margin-top: -10px;
-  line-height: 36px !important;
-  background: rgba(255, 255, 255, 0.9);
-  z-index: 1000;
-  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3); }
-
-/* line 351, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
-.csb-tab-item:hover .csb-tab-title {
-  line-height: 42px; }
-
-/* line 355, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
-.csb-tab-active {
-  height: 38px;
-  margin-top: -3px;
-  margin-bottom: -3px;
-  width: 102%;
-  margin-left: -2%;
-  background: white;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-  z-index: 12; }
-
-/* line 366, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 411, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-tab-active .csb-tab-title {
   line-height: 36px; }
 
-/* line 370, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 415, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-tab-collapse {
   background-image: url('/resources/icons/ic_arrow_drop_down_black_24dp.png');
   background-size: 24px 24px;
@@ -300,12 +300,12 @@ body {
   opacity: 0.5;
   transition: transform 0.3s, opacity 0.3s; }
 
-/* line 382, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 427, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-tab-collapse:hover {
   transform: rotate(0deg);
   opacity: 1; }
 
-/* line 387, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 432, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-tab-icon {
   width: 16px;
   height: 16px;
@@ -313,7 +313,7 @@ body {
   left: 24px;
   position: absolute; }
 
-/* line 395, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 440, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-tab-title {
   height: 32px;
   line-height: 32px;
@@ -323,9 +323,12 @@ body {
   padding-left: 48px;
   padding-right: 36px;
   font-size: 11.5px;
-  font-size: 11px; }
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.2px;
+  pointer-events: none; }
 
-/* line 407, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 455, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-tab-action {
   position: absolute;
   width: 24px;
@@ -333,15 +336,31 @@ body {
   right: 8px;
   top: 4px;
   background-image: url('/resources/icons/ic_close_black_18dp.png');
-  background-image: url('/resources/icons/close.png');
+  background-image: url('/assets/images/csb_close_black_18dp.png');
   background-size: 18px 18px;
   background-repeat: no-repeat;
   background-position: center;
   transition: background 0.3s;
-  opacity: 0.8; }
+  opacity: 0.4; }
 
-/* line 423, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+/* line 471, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
 .csb-tab-action:hover {
-  background-image: url(/resources/icons/ic_cancel_black_18dp.png); }
+  background-image: url(/assets/images/ic_cancel_black_18dp.png); }
+
+/* line 476, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+.csb-tab-active {
+  transition: all 0.3s ease-out;
+  height: 42px;
+  margin-top: -7px;
+  margin-bottom: -3px;
+  line-height: 42px !important;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3); }
+
+/* line 489, /Users/albert/Development/chrome-sidebar/sidebar/sidebar.scss */
+.csb-tab-active .csb-tab-title {
+  transition: line-height 0.3s ease-out;
+  line-height: 42px; }
 
 /*# sourceMappingURL=sidebar.css.map */

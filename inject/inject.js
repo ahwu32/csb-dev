@@ -5,7 +5,6 @@
  * @author ah.wu32@gmail.com
  */
 
-console.log('inject testing');
 console.time('inject');
 
 inject();
@@ -45,9 +44,6 @@ function inject() {
 		chrome.runtime.sendMessage({sidebarOpened: true});
 		sidebarOpen = true;
 		
-		//Working velocity animations
-//		Velocity(sidebarEl, {left: 0}, {duration: 300});
-//		Velocity(overlayEl, {opacity: 0.7}, {duration: 300, queue: false, display: 'block'});
 		
 	}, false);
 	
@@ -71,10 +67,6 @@ function inject() {
 			sidebarOpen = false;
 		}
 
-		
-		//Workign velocity animations
-//		Velocity(sidebarEl, {left: -250}, {duration: 300});
-//		Velocity(overlayEl, {opacity: 0}, {duration: 300, display: 'none'});
 	}
 	
 	function fadeIn(overlayEl) {
